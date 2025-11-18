@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hairloss Classification System</title>
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="split fileUpload">
+        <div class="topped">
+            <div class="imageUpload">
+                <h2>HairLoss Detection, Simplified!</h2>
+                <h3>Upload your Facial Image, and get a personalized treatment.</h3>
+                <form  class="fileSelector" id="uploadForm">
+                    <input type="file" accept=".jpg,.jpeg,.png,.webp" id="input_image" name="input_image" onchange="checkImageSize()"> 
+                    <p id="fileSizeError"></p>
+                    <button type="submit" id="imageSubmit">Submit</button>
+                </form>
+            <div></div>
+            </div>
+            <div class="imageShow">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/701/can-discovery-end-balding-and-graying-1494333252.jpg" id="selectedImage">
+            </div>
+        </div>
+    </div>
+    <div class="split chatSuggestion">
+        <div class="bottomed">
+            <div class="chatBot">
+                <ul class="chatbox">
+                    <li class="chat-incoming chat" id="welcome" style="display: none;">
+                        <p id="result"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="openChat">
+                <button type="submit" id="chatSubmit" ><i class="fa-solid fa-arrow-right" style="color:white""></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
